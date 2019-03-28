@@ -22,7 +22,7 @@ def get_user_timeline(client, screen_name, count=50, include_rts='False'):
     fields = "?screen_name=%s&count=%s&include_rts=%s" % (screen_name, count, include_rts)
     #fields = "?screen_name=%s" % (screen_name)
     url = base + node + fields
-
+    print(url)
     response, data = client.request(url)
     
     try:
@@ -78,8 +78,7 @@ def getTwitterTwit(tweet, jsonResult):
 
 #[CODE 4]
 def main():
-    screen_name = "jtbc_news"
-   
+    screen_name = input("크롤링할 트위터 계정을 입력 (ex)BBCBreaking :   ")
     num_posts = 50
 
     jsonResult = []
